@@ -1,17 +1,19 @@
-function hasTargetSum (array, target) {
- for (let i = 0; i < array.length ; i++ ){
-  let num1 = array[i]
-  for (let j = 0   ; j < array.length ; j++ ){
-    let num2 = array[j]
-    let sum = num1 + num2
-    if (sum === target) {
-      return true; 
+function hasTargetSum(array, target) {
+  for (let i = 0; i < array.length; i++) {
+    let num1 = array[i];
+    for (let j = 0; j < array.length; j++) {
+      if (i !== j) {
+        // Ensure num1 and num2 are different
+        let num2 = array[j];
+        let sum = num1 + num2;
+        if (sum === target) {
+          return true;
+        }
+      }
     }
   }
+  return false;
 }
-return false
-}
-
 
 /* 
   Write the Big O time complexity of your function here
